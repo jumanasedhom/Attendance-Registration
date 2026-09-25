@@ -663,7 +663,7 @@ function registerAttendance() {
     if (!code) {
 
         showError(
-            "Please enter student code"
+            "Please Enter The Code"
         );
 
         return;
@@ -676,7 +676,7 @@ function registerAttendance() {
     ) {
 
         showError(
-            "Invalid Student Code"
+            "Invalid Code"
         );
 
         clearInput();
@@ -698,7 +698,7 @@ function registerAttendance() {
     if (!student) {
 
         showError(
-            "Student Code Not Found"
+            "The Code Is Not Found"
         );
 
         clearInput();
@@ -843,7 +843,7 @@ async function removeAttendance() {
     if (!code) {
 
         showError(
-            "Please enter student code"
+            "Please Enter The Code"
         );
 
         return;
@@ -855,7 +855,7 @@ async function removeAttendance() {
     ) {
 
         showError(
-            "Invalid Student Code"
+            "Invalid Code"
         );
 
         clearInput();
@@ -875,7 +875,7 @@ async function removeAttendance() {
     if (!student) {
 
         showError(
-            "Student Code Not Found"
+            "The Code Is Not Found"
         );
 
         clearInput();
