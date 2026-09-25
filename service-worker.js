@@ -1,19 +1,15 @@
 const CACHE_NAME =
-    "attendance-app-v5";
+    "attendance-app-v6";
 
 
 const APP_FILES = [
-
     "./",
-
     "./index.html",
-
     "./style.css",
-
     "./app.js",
-
-    "./manifest.json"
-
+    "./manifest.json",
+    "./icon-192.png",
+    "./icon-512.png"
 ];
 
 
