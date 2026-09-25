@@ -1,0 +1,282 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    color: #222;
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    padding: 25px 18px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h2 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #777;
+    margin-top: 5px;
+}
+
+.section {
+    background: #ffffff;
+    padding: 20px;
+    margin-bottom: 25px;
+    border-radius: 15px;
+
+    box-shadow:
+        0 2px 10px
+        rgba(0, 0, 0, 0.05);
+}
+
+input {
+    width: 100%;
+
+    padding: 15px;
+
+    margin-top: 12px;
+
+    font-size: 18px;
+
+    border: 2px solid #ddd;
+
+    border-radius: 10px;
+
+    outline: none;
+}
+
+input:focus {
+    border-color: #222;
+}
+
+#studentCode {
+    font-size: 30px;
+
+    text-align: center;
+
+    letter-spacing: 5px;
+}
+
+button {
+    width: 100%;
+
+    padding: 14px;
+
+    margin-top: 12px;
+
+    font-size: 17px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #222;
+
+    color: white;
+
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+#message,
+#studentMessage {
+    min-height: 45px;
+
+    margin-top: 15px;
+
+    text-align: center;
+
+    font-size: 18px;
+}
+
+.success {
+    color: green;
+
+    font-weight: bold;
+}
+
+.error {
+    color: red;
+
+    font-weight: bold;
+}
+
+
+/* TODAY TOTAL */
+
+.today-total {
+    margin-top: 20px;
+
+    padding: 15px;
+
+    background: #f5f5f5;
+
+    border-radius: 10px;
+
+    text-align: center;
+
+    font-size: 18px;
+}
+
+.today-total strong {
+    font-size: 24px;
+}
+
+
+/* GRADE BUTTONS */
+
+.grade-buttons {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 10px;
+
+    margin: 20px 0;
+}
+
+.grade-button {
+    margin: 0;
+
+    background: #e5e5e5;
+
+    color: #222;
+}
+
+.grade-button.active {
+    background: #222;
+
+    color: white;
+}
+
+
+/* GRADE SUMMARY */
+
+.grade-summary {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 10px;
+
+    margin: 20px 0;
+}
+
+.summary-card {
+    background: #f5f5f5;
+
+    padding: 15px 5px;
+
+    border-radius: 10px;
+
+    text-align: center;
+}
+
+.summary-card span {
+    display: block;
+
+    color: #777;
+
+    font-size: 13px;
+}
+
+.summary-card strong {
+    display: block;
+
+    margin-top: 7px;
+
+    font-size: 27px;
+}
+
+
+/* ATTENDANCE ITEMS */
+
+.attendance-item {
+    padding: 15px;
+
+    margin-bottom: 10px;
+
+    background: #f7f7f7;
+
+    border-radius: 10px;
+}
+
+.student-name {
+    font-size: 18px;
+
+    font-weight: bold;
+}
+
+.student-info {
+    margin-top: 6px;
+
+    color: #777;
+
+    font-size: 14px;
+}
+
+.empty-message {
+    color: #888;
+
+    text-align: center;
+
+    padding: 20px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 450px) {
+
+    .container {
+        padding: 15px 10px;
+    }
+
+    .section {
+        padding: 15px;
+    }
+
+    .summary-card span {
+        font-size: 11px;
+    }
+
+    .summary-card strong {
+        font-size: 22px;
+    }
+}
+
+.sync-status {
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.sync-status.online {
+    color: green;
+}
+
+.sync-status.offline {
+    color: #c0392b;
+}
+
+.sync-status.syncing {
+    color: #777;
+}
