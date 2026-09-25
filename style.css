@@ -280,3 +280,10 @@ button:hover {
 .sync-status.syncing {
     color: #777;
 }
+.remove-button {
+    background: #b3261e;
+}
+
+.remove-button:hover {
+    opacity: 0.9;
+}

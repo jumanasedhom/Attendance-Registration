@@ -97,7 +97,10 @@ const syncStatus =
         "syncStatus"
     );
 
-
+const removeAttendanceButton =
+    document.getElementById(
+        "removeAttendanceButton"
+    );
 
 // ==========================================
 // DATE
@@ -831,7 +834,212 @@ function registerAttendance() {
     }
 }
 
+async function removeAttendance() {
 
+    const code =
+        codeInput.value.trim();
+
+
+    if (!code) {
+
+        showError(
+            "Please enter student code"
+        );
+
+        return;
+    }
+
+
+    if (
+        !/^[3456]\d{3}$/.test(code)
+    ) {
+
+        showError(
+            "Invalid Student Code"
+        );
+
+        clearInput();
+
+        return;
+    }
+
+
+    const student =
+        students.find(
+            student =>
+                String(student.code)
+                === code
+        );
+
+
+    if (!student) {
+
+        showError(
+            "Student Code Not Found"
+        );
+
+        clearInput();
+
+        return;
+    }
+
+
+    const today =
+        getToday();
+
+
+    const isPresent =
+        attendance.some(
+            record =>
+                String(record.code)
+                    === code
+                &&
+                record.date
+                    === today
+        );
+
+
+    if (!isPresent) {
+
+        showError(
+            `${student.name} is not registered today`
+        );
+
+        clearInput();
+
+        return;
+    }
+
+
+    const confirmed =
+        confirm(
+            `Remove today's attendance for ${student.name}?`
+        );
+
+
+    if (!confirmed) {
+
+        return;
+    }
+
+
+    if (!navigator.onLine) {
+
+        showError(
+            "Internet connection is required to remove attendance"
+        );
+
+        return;
+    }
+
+
+    try {
+
+        removeAttendanceButton.disabled =
+            true;
+
+
+        message.innerHTML = `
+
+            <div>
+                Removing attendance...
+            </div>
+
+        `;
+
+
+        const response =
+            await jsonpRequest({
+
+                action:
+                    "remove",
+
+                code:
+                    code,
+
+                date:
+                    today
+
+            });
+
+
+        if (!response.success) {
+
+            throw new Error(
+                response.message
+            );
+        }
+
+
+        attendance =
+            attendance.filter(
+                record => !(
+                    String(record.code)
+                        === code
+                    &&
+                    record.date
+                        === today
+                )
+            );
+
+
+        pendingAttendance =
+            pendingAttendance.filter(
+                record => !(
+                    String(record.code)
+                        === code
+                    &&
+                    record.date
+                        === today
+                )
+            );
+
+
+        saveLocalData();
+
+
+        message.innerHTML = `
+
+            <div class="success">
+
+                ${student.name}
+
+                <br>
+
+                Attendance Removed Successfully
+
+            </div>
+
+        `;
+
+
+        clearInput();
+
+        refreshUI();
+
+
+        await syncFromSheet();
+
+
+    } catch (error) {
+
+        console.error(error);
+
+
+        showError(
+            error.message
+            ||
+            "Could not remove attendance"
+        );
+
+    } finally {
+
+        removeAttendanceButton.disabled =
+            false;
+
+    }
+
+}
 
 // ==========================================
 // ERROR
@@ -1106,7 +1314,11 @@ document.addEventListener(
     }
 );
 
-
+removeAttendanceButton
+    .addEventListener(
+        "click",
+        removeAttendance
+    );
 
 // ==========================================
 // START
