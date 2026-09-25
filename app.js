@@ -86,18 +86,6 @@ const absentStudents =
     );
 
 
-const gradeAttendanceList =
-    document.getElementById(
-        "gradeAttendanceList"
-    );
-
-
-const gradeTitle =
-    document.getElementById(
-        "gradeTitle"
-    );
-
-
 const gradeButtons =
     document.querySelectorAll(
         ".grade-button"
@@ -978,101 +966,17 @@ function displayGradeAttendance() {
         );
 
 
-    totalStudents
-        .textContent =
-            total;
+    totalStudents.textContent =
+        total;
 
 
-    presentStudents
-        .textContent =
-            present;
+    presentStudents.textContent =
+        present;
 
 
-    absentStudents
-        .textContent =
-            absent;
+    absentStudents.textContent =
+        absent;
 
-
-    gradeTitle
-        .textContent =
-            `${selectedGrade} Attendance`;
-
-
-    gradeAttendanceList
-        .innerHTML =
-            "";
-
-
-    if (
-        present === 0
-    ) {
-
-        gradeAttendanceList
-            .innerHTML = `
-
-                <div class="empty-message">
-
-                    No attendance registered
-                    for ${selectedGrade} today.
-
-                </div>
-
-            `;
-
-        return;
-    }
-
-
-    gradeStudents
-
-        .filter(
-            student =>
-                presentCodes.has(
-                    String(
-                        student.code
-                    )
-                )
-        )
-
-        .forEach(
-            student => {
-
-                const item =
-                    document.createElement(
-                        "div"
-                    );
-
-
-                item.className =
-                    "attendance-item";
-
-
-                item.innerHTML = `
-
-                    <div class="student-name">
-
-                        ${student.name}
-
-                    </div>
-
-
-                    <div class="student-info">
-
-                        Code:
-                        ${student.code}
-
-                    </div>
-
-                `;
-
-
-                gradeAttendanceList
-                    .appendChild(
-                        item
-                    );
-
-            }
-        );
 }
 
 
