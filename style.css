@@ -287,3 +287,26 @@ button:hover {
 .remove-button:hover {
     opacity: 0.9;
 }
+.today-attendance-by-grade {
+    margin-top: 20px;
+}
+
+.today-grade-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 15px;
+
+    margin-bottom: 8px;
+
+    background: #f5f5f5;
+
+    border-radius: 10px;
+
+    font-size: 17px;
+}
+
+.today-grade-row strong {
+    font-size: 22px;
+}

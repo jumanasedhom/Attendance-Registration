@@ -62,9 +62,24 @@ const message =
     );
 
 
-const attendanceCount =
+const todayGrade3Count =
     document.getElementById(
-        "attendanceCount"
+        "todayGrade3Count"
+    );
+
+const todayGrade4Count =
+    document.getElementById(
+        "todayGrade4Count"
+    );
+
+const todayGrade5Count =
+    document.getElementById(
+        "todayGrade5Count"
+    );
+
+const todayGrade6Count =
+    document.getElementById(
+        "todayGrade6Count"
     );
 
 
@@ -108,17 +123,35 @@ const removeAttendanceButton =
 
 function getToday() {
 
-    const now =
-        new Date();
+    const now = new Date();
+
+
+    const currentDay =
+        now.getDay();
+
+
+    const daysSinceFriday =
+        (currentDay - 5 + 7) % 7;
+
+
+    const friday =
+        new Date(now);
+
+
+    friday.setDate(
+        now.getDate()
+        -
+        daysSinceFriday
+    );
 
 
     const year =
-        now.getFullYear();
+        friday.getFullYear();
 
 
     const month =
         String(
-            now.getMonth() + 1
+            friday.getMonth() + 1
         ).padStart(
             2,
             "0"
@@ -127,16 +160,14 @@ function getToday() {
 
     const day =
         String(
-            now.getDate()
+            friday.getDate()
         ).padStart(
             2,
             "0"
         );
 
 
-    return (
-        `${year}-${month}-${day}`
-    );
+    return `${year}-${month}-${day}`;
 }
 
 
@@ -1086,32 +1117,60 @@ function displayAttendanceCount() {
         getToday();
 
 
-    const codes =
-        new Set(
-
-            attendance
-
-                .filter(
-                    record =>
-                        record.date
-                        === today
-                )
-
-                .map(
-                    record =>
-                        String(
-                            record.code
-                        )
-                )
-
+    const todayAttendance =
+        attendance.filter(
+            record =>
+                record.date === today
         );
 
 
-    attendanceCount
-        .textContent =
-            codes.size;
-}
+    const countForGrade =
+        gradeName => {
 
+            const codes =
+                new Set(
+
+                    todayAttendance
+
+                        .filter(
+                            record => {
+
+                                const grade =
+                                    record.grade
+                                    ||
+                                    getGradeFromCode(
+                                        record.code
+                                    );
+
+                                return grade === gradeName;
+                            }
+                        )
+
+                        .map(
+                            record =>
+                                String(
+                                    record.code
+                                )
+                        )
+
+                );
+
+            return codes.size;
+        };
+
+
+    todayGrade3Count.textContent =
+        countForGrade("Grade 3");
+
+    todayGrade4Count.textContent =
+        countForGrade("Grade 4");
+
+    todayGrade5Count.textContent =
+        countForGrade("Grade 5");
+
+    todayGrade6Count.textContent =
+        countForGrade("Grade 6");
+}
 
 
 // ==========================================
@@ -1322,22 +1381,29 @@ removeAttendanceButton
 // START
 // ==========================================
 
-refreshUI();
+if (navigator.onLine) {
 
+    // Do not show old saved attendance while syncing
+    todayGrade3Count.textContent = "0";
+    todayGrade4Count.textContent = "0";
+    todayGrade5Count.textContent = "0";
+    todayGrade6Count.textContent = "0";
 
-if (
-    navigator.onLine
-) {
+    totalStudents.textContent = "0";
+    presentStudents.textContent = "0";
+    absentStudents.textContent = "0";
 
     runSync();
 
 } else {
 
+    // Use saved data only when there is no internet
+    refreshUI();
+
     setSyncStatus(
         "Offline - Using saved data",
         "offline"
     );
-
 }
 
 
@@ -1346,10 +1412,7 @@ if (
 // SERVICE WORKER
 // ==========================================
 
-if (
-    "serviceWorker"
-    in navigator
-) {
+if ("serviceWorker" in navigator) {
 
     window.addEventListener(
         "load",
