@@ -535,3 +535,66 @@ button:hover {
         font-size: 19px;
     }
 }
+/* MOBILE SIZE FIX */
+
+@media (max-width: 600px) {
+
+    .simple-cross {
+        font-size: 36px !important;
+        margin-bottom: 10px !important;
+    }
+
+    .church-title {
+        font-size: 15px !important;
+        line-height: 1.6 !important;
+    }
+
+    .attendance-title {
+        font-size: 24px !important;
+        margin: 5px 0 !important;
+    }
+
+    .sync-status {
+        font-size: 11px !important;
+    }
+
+    .code-label {
+        font-size: 15px !important;
+    }
+
+    #studentCode {
+        font-size: 18px !important;
+        padding: 11px !important;
+    }
+
+    #attendanceButton,
+    #removeAttendanceButton {
+        font-size: 16px !important;
+        padding: 11px !important;
+    }
+
+    .today-grade-row {
+        font-size: 12px !important;
+        padding: 10px 12px !important;
+    }
+
+    .today-grade-row strong {
+        font-size: 17px !important;
+    }
+
+    .section h2 {
+        font-size: 20px !important;
+    }
+
+    .grade-button {
+        font-size: 13px !important;
+    }
+
+    .summary-card span {
+        font-size: 10px !important;
+    }
+
+    .summary-card strong {
+        font-size: 18px !important;
+    }
+}
