@@ -7,6 +7,7 @@ body {
     font-family: Arial, sans-serif;
     background: #f5f5f5;
     color: #222;
+    direction: rtl;
 }
 
 .container {
@@ -25,10 +26,10 @@ h2 {
     margin-bottom: 10px;
 }
 
-.subtitle {
-    color: #777;
-    margin-top: 5px;
-}
+
+/* ==========================================
+   GENERAL SECTION
+========================================== */
 
 .section {
     background: #ffffff;
@@ -41,230 +42,75 @@ h2 {
         rgba(0, 0, 0, 0.05);
 }
 
-input {
-    width: 100%;
-
-    padding: 15px;
-
-    margin-top: 12px;
-
-    font-size: 18px;
-
-    border: 2px solid #ddd;
-
-    border-radius: 10px;
-
-    outline: none;
-}
-
-input:focus {
-    border-color: #222;
-}
-
-#studentCode {
-    font-size: 30px;
-
+.section h2 {
     text-align: center;
-
-    letter-spacing: 5px;
-}
-
-button {
-    width: 100%;
-
-    padding: 14px;
-
-    margin-top: 12px;
-
-    font-size: 17px;
-
-    border: none;
-
-    border-radius: 10px;
-
-    background: #222;
-
-    color: white;
-
-    cursor: pointer;
-}
-
-button:hover {
-    opacity: 0.9;
-}
-
-#message,
-#studentMessage {
-    min-height: 45px;
-
-    margin-top: 15px;
-
-    text-align: center;
-
-    font-size: 18px;
-}
-
-.success {
-    color: green;
-
-    font-weight: bold;
-}
-
-.error {
-    color: red;
-
-    font-weight: bold;
-}
-
-
-/* TODAY TOTAL */
-
-.today-total {
-    margin-top: 20px;
-
-    padding: 15px;
-
-    background: #f5f5f5;
-
-    border-radius: 10px;
-
-    text-align: center;
-
-    font-size: 18px;
-}
-
-.today-total strong {
     font-size: 24px;
 }
 
 
-/* GRADE BUTTONS */
+/* ==========================================
+   HEADER
+========================================== */
 
-.grade-buttons {
-    display: grid;
-
-    grid-template-columns:
-        repeat(2, 1fr);
-
-    gap: 10px;
-
-    margin: 20px 0;
-}
-
-.grade-button {
-    margin: 0;
-
-    background: #e5e5e5;
-
-    color: #222;
-}
-
-.grade-button.active {
-    background: #222;
-
-    color: white;
-}
-
-
-/* GRADE SUMMARY */
-
-.grade-summary {
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap: 10px;
-
-    margin: 20px 0;
-}
-
-.summary-card {
-    background: #f5f5f5;
-
-    padding: 15px 5px;
-
-    border-radius: 10px;
-
+.simple-header {
     text-align: center;
-}
-
-.summary-card span {
-    display: block;
-
-    color: #777;
-
-    font-size: 13px;
-}
-
-.summary-card strong {
-    display: block;
-
-    margin-top: 7px;
-
-    font-size: 27px;
+    padding-top: 10px;
+    margin-bottom: 18px;
 }
 
 
-/* ATTENDANCE ITEMS */
+/* BLACK CROSS */
 
-.attendance-item {
-    padding: 15px;
+.simple-cross {
+    background: transparent;
+    color: #111111;
 
-    margin-bottom: 10px;
+    font-size: 52px;
+    font-weight: 700;
 
-    background: #f7f7f7;
+    line-height: 1;
 
-    border-radius: 10px;
+    margin: 0 auto 15px;
 }
 
-.student-name {
-    font-size: 18px;
 
-    font-weight: bold;
-}
+/* CHURCH NAME */
 
-.student-info {
-    margin-top: 6px;
-
-    color: #777;
-
-    font-size: 14px;
-}
-
-.empty-message {
-    color: #888;
-
+.church-title {
     text-align: center;
 
-    padding: 20px;
+    font-size: 20px;
+    font-weight: 500;
+
+    color: #333333;
+
+    margin-bottom: 7px;
 }
 
 
-/* MOBILE */
+/* MAIN TITLE */
 
-@media (max-width: 450px) {
+.attendance-title {
+    text-align: center;
 
-    .container {
-        padding: 15px 10px;
-    }
+    font-size: 32px;
+    font-weight: 700;
 
-    .section {
-        padding: 15px;
-    }
+    color: #222222;
 
-    .summary-card span {
-        font-size: 11px;
-    }
-
-    .summary-card strong {
-        font-size: 22px;
-    }
+    margin: 5px 0 8px;
 }
+
+
+/* ==========================================
+   SYNC STATUS
+========================================== */
 
 .sync-status {
     text-align: center;
+
     margin-bottom: 15px;
+
     font-size: 13px;
     font-weight: bold;
 }
@@ -279,103 +125,6 @@ button:hover {
 
 .sync-status.syncing {
     color: #777;
-}
-.remove-button {
-    background: #b3261e;
-}
-
-.remove-button:hover {
-    opacity: 0.9;
-}
-.today-attendance-by-grade {
-    margin-top: 20px;
-}
-
-.today-grade-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    padding: 15px;
-
-    margin-bottom: 8px;
-
-    background: #f5f5f5;
-
-    border-radius: 10px;
-
-    font-size: 17px;
-}
-
-.today-grade-row strong {
-    font-size: 22px;
-}
-/* ==========================================
-   ARABIC HEADER
-========================================== */
-
-body {
-    direction: rtl;
-}
-
-.simple-header {
-    text-align: center;
-    padding-top: 15px;
-    margin-bottom: 20px;
-}
-
-
-/* BLACK CROSS */
-
-.simple-cross {
-    background: transparent;
-    color: #111111;
-
-    font-size: 70px;
-    font-weight: 700;
-
-    line-height: 1;
-
-    margin: 0 auto 18px;
-}
-
-
-/* CHURCH NAME */
-
-.church-title {
-    text-align: center;
-
-    font-size: 25px;
-    font-weight: 500;
-
-    color: #333333;
-
-    margin-bottom: 8px;
-}
-
-
-/* MAIN TITLE */
-
-.attendance-title {
-    text-align: center;
-
-    font-size: 40px;
-    font-weight: 700;
-
-    color: #222222;
-
-    margin: 5px 0 10px;
-}
-
-
-/* SYNC */
-
-.sync-status {
-    text-align: center;
-
-    font-size: 15px;
-
-    margin-bottom: 18px;
 }
 
 
@@ -395,58 +144,107 @@ body {
 
     text-align: right;
 
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 600;
 
-    margin-bottom: 8px;
+    margin-bottom: 6px;
 }
 
 
 /* CODE INPUT */
+
+input {
+    width: 100%;
+
+    padding: 15px;
+
+    margin-top: 10px;
+
+    font-size: 18px;
+
+    border: 2px solid #ddd;
+
+    border-radius: 10px;
+
+    outline: none;
+}
+
+input:focus {
+    border-color: #222;
+}
 
 #studentCode {
     width: 100%;
 
     box-sizing: border-box;
 
-    padding: 17px;
+    padding: 15px;
 
-    margin-bottom: 15px;
+    margin-top: 8px;
+    margin-bottom: 13px;
 
-    font-size: 28px;
+    font-size: 22px;
 
     text-align: center;
 
     direction: ltr;
 
+    letter-spacing: 4px;
+
     border: 2px solid #c5c5c5;
 
-    border-radius: 14px;
+    border-radius: 12px;
 
     outline: none;
 }
-
 
 #studentCode:focus {
     border-color: #444444;
 }
 
 
-/* BUTTONS */
+/* ==========================================
+   BUTTONS
+========================================== */
+
+button {
+    width: 100%;
+
+    padding: 13px;
+
+    margin-top: 10px;
+
+    font-size: 16px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #222;
+
+    color: white;
+
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
 
 #attendanceButton,
 #removeAttendanceButton {
     width: 100%;
 
-    padding: 16px;
+    padding: 14px;
 
-    margin-bottom: 13px;
+    margin-bottom: 11px;
 
     border: none;
 
-    border-radius: 13px;
+    border-radius: 12px;
 
-    font-size: 23px;
+    font-size: 19px;
 
     cursor: pointer;
 }
@@ -464,14 +262,50 @@ body {
 }
 
 
+.remove-button {
+    background: #b3261e;
+}
+
+.remove-button:hover {
+    opacity: 0.9;
+}
+
+
 /* ==========================================
-   TODAY BY GRADE
+   MESSAGE
+========================================== */
+
+#message,
+#studentMessage {
+    min-height: 40px;
+
+    margin-top: 12px;
+
+    text-align: center;
+
+    font-size: 16px;
+}
+
+.success {
+    color: green;
+
+    font-weight: bold;
+}
+
+.error {
+    color: red;
+
+    font-weight: bold;
+}
+
+
+/* ==========================================
+   TODAY ATTENDANCE BY GRADE
 ========================================== */
 
 .today-attendance-by-grade {
-    margin-top: 25px;
+    margin-top: 20px;
 }
-
 
 .today-grade-row {
     display: flex;
@@ -480,42 +314,224 @@ body {
 
     align-items: center;
 
-    padding: 15px 17px;
+    padding: 13px 15px;
 
-    margin-bottom: 9px;
+    margin-bottom: 8px;
 
     background: #f4f4f4;
 
-    border-radius: 11px;
+    border-radius: 10px;
 
-    font-size: 17px;
+    font-size: 15px;
 }
 
-
 .today-grade-row strong {
-    font-size: 23px;
+    font-size: 20px;
 }
 
 
 /* ==========================================
-   SECOND SECTION
+   GRADE BUTTONS
 ========================================== */
 
-.section h2 {
-    text-align: center;
-}
-
-
 .grade-buttons {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 10px;
+
+    margin: 18px 0;
+
     direction: rtl;
 }
 
+.grade-button {
+    margin: 0;
+
+    background: #e5e5e5;
+
+    color: #222;
+
+    font-size: 15px;
+}
+
+.grade-button.active {
+    background: #222;
+
+    color: white;
+}
+
+
+/* ==========================================
+   GRADE SUMMARY
+========================================== */
 
 .grade-summary {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 10px;
+
+    margin: 18px 0;
+
     direction: rtl;
 }
 
-
 .summary-card {
+    background: #f5f5f5;
+
+    padding: 13px 5px;
+
+    border-radius: 10px;
+
     text-align: center;
+}
+
+.summary-card span {
+    display: block;
+
+    color: #777;
+
+    font-size: 12px;
+}
+
+.summary-card strong {
+    display: block;
+
+    margin-top: 6px;
+
+    font-size: 22px;
+}
+
+
+/* ==========================================
+   OLD ATTENDANCE ITEMS
+========================================== */
+
+.attendance-item {
+    padding: 13px;
+
+    margin-bottom: 10px;
+
+    background: #f7f7f7;
+
+    border-radius: 10px;
+}
+
+.student-name {
+    font-size: 16px;
+
+    font-weight: bold;
+}
+
+.student-info {
+    margin-top: 6px;
+
+    color: #777;
+
+    font-size: 13px;
+}
+
+.empty-message {
+    color: #888;
+
+    text-align: center;
+
+    padding: 18px;
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 450px) {
+
+    .container {
+        padding: 14px 10px;
+    }
+
+    .section {
+        padding: 14px;
+        margin-bottom: 18px;
+    }
+
+    .simple-header {
+        margin-bottom: 14px;
+    }
+
+    .simple-cross {
+        font-size: 44px;
+        margin-bottom: 12px;
+    }
+
+    .church-title {
+        font-size: 16px;
+    }
+
+    .attendance-title {
+        font-size: 27px;
+    }
+
+    .sync-status {
+        font-size: 12px;
+    }
+
+    .code-label {
+        font-size: 16px;
+    }
+
+    #studentCode {
+        font-size: 20px;
+
+        padding: 13px;
+
+        letter-spacing: 3px;
+    }
+
+    #attendanceButton,
+    #removeAttendanceButton {
+        font-size: 17px;
+
+        padding: 13px;
+    }
+
+    #message,
+    #studentMessage {
+        font-size: 14px;
+    }
+
+    .today-grade-row {
+        font-size: 13px;
+
+        padding: 12px 13px;
+    }
+
+    .today-grade-row strong {
+        font-size: 18px;
+    }
+
+    .section h2 {
+        font-size: 21px;
+    }
+
+    .grade-button {
+        font-size: 14px;
+    }
+
+    .summary-card {
+        padding: 11px 4px;
+    }
+
+    .summary-card span {
+        font-size: 10px;
+    }
+
+    .summary-card strong {
+        font-size: 19px;
+    }
 }
