@@ -1,5 +1,5 @@
 const CACHE_NAME =
-    "attendance-app-v8";
+    "attendance-app-v9";
 
 
 const APP_FILES = [

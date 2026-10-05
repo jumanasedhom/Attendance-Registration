@@ -310,3 +310,212 @@ button:hover {
 .today-grade-row strong {
     font-size: 22px;
 }
+/* ==========================================
+   ARABIC HEADER
+========================================== */
+
+body {
+    direction: rtl;
+}
+
+.simple-header {
+    text-align: center;
+    padding-top: 15px;
+    margin-bottom: 20px;
+}
+
+
+/* BLACK CROSS */
+
+.simple-cross {
+    background: transparent;
+    color: #111111;
+
+    font-size: 70px;
+    font-weight: 700;
+
+    line-height: 1;
+
+    margin: 0 auto 18px;
+}
+
+
+/* CHURCH NAME */
+
+.church-title {
+    text-align: center;
+
+    font-size: 25px;
+    font-weight: 500;
+
+    color: #333333;
+
+    margin-bottom: 8px;
+}
+
+
+/* MAIN TITLE */
+
+.attendance-title {
+    text-align: center;
+
+    font-size: 40px;
+    font-weight: 700;
+
+    color: #222222;
+
+    margin: 5px 0 10px;
+}
+
+
+/* SYNC */
+
+.sync-status {
+    text-align: center;
+
+    font-size: 15px;
+
+    margin-bottom: 18px;
+}
+
+
+/* ==========================================
+   FIRST SECTION
+========================================== */
+
+.top-section {
+    text-align: center;
+}
+
+
+/* CODE LABEL */
+
+.code-label {
+    display: block;
+
+    text-align: right;
+
+    font-size: 20px;
+    font-weight: 600;
+
+    margin-bottom: 8px;
+}
+
+
+/* CODE INPUT */
+
+#studentCode {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 17px;
+
+    margin-bottom: 15px;
+
+    font-size: 28px;
+
+    text-align: center;
+
+    direction: ltr;
+
+    border: 2px solid #c5c5c5;
+
+    border-radius: 14px;
+
+    outline: none;
+}
+
+
+#studentCode:focus {
+    border-color: #444444;
+}
+
+
+/* BUTTONS */
+
+#attendanceButton,
+#removeAttendanceButton {
+    width: 100%;
+
+    padding: 16px;
+
+    margin-bottom: 13px;
+
+    border: none;
+
+    border-radius: 13px;
+
+    font-size: 23px;
+
+    cursor: pointer;
+}
+
+
+#attendanceButton {
+    background: #242424;
+    color: white;
+}
+
+
+#removeAttendanceButton {
+    background: #b3261e;
+    color: white;
+}
+
+
+/* ==========================================
+   TODAY BY GRADE
+========================================== */
+
+.today-attendance-by-grade {
+    margin-top: 25px;
+}
+
+
+.today-grade-row {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 15px 17px;
+
+    margin-bottom: 9px;
+
+    background: #f4f4f4;
+
+    border-radius: 11px;
+
+    font-size: 17px;
+}
+
+
+.today-grade-row strong {
+    font-size: 23px;
+}
+
+
+/* ==========================================
+   SECOND SECTION
+========================================== */
+
+.section h2 {
+    text-align: center;
+}
+
+
+.grade-buttons {
+    direction: rtl;
+}
+
+
+.grade-summary {
+    direction: rtl;
+}
+
+
+.summary-card {
+    text-align: center;
+}

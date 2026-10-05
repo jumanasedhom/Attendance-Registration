@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 
 <head>
 
@@ -11,12 +11,12 @@
     >
 
     <title>
-        Attendance System
+        تسجيل حضور
     </title>
 
     <meta
         name="theme-color"
-        content="#222222"
+        content="#ffffff"
     >
 
     <link
@@ -36,31 +36,44 @@
 
 <div class="container">
 
-    <h1>
-       Attendance System
-    </h1>
 
+    <!-- HEADER -->
 
-    <div
-        id="syncStatus"
-        class="sync-status"
-    >
-        Loading...
+    <div class="simple-header">
+
+        <div class="simple-cross">
+            ✝
+        </div>
+
+        <div class="church-title">
+            كنيسة السيدة العذراء وماريوحنا الحبيب
+        </div>
+
+        <h1 class="attendance-title">
+            تسجيل حضور
+        </h1>
+
+        <div
+            id="syncStatus"
+            class="sync-status"
+        >
+           Syncing...
+        </div>
+
     </div>
 
 
-    <!-- ATTENDANCE -->
 
-    <section class="section">
+    <!-- ATTENDANCE REGISTRATION -->
 
-        <h2>
-            Attendance Registration
-        </h2>
+    <section class="section top-section">
 
-        <p class="subtitle">
-            Enter The Code
-        </p>
-
+        <label
+            class="code-label"
+            for="studentCode"
+        >
+            الكود
+        </label>
 
         <input
             type="text"
@@ -73,52 +86,89 @@
 
 
         <button id="attendanceButton">
-            Register Attendance
+            تسجيل
         </button>
 
+
         <button
-           id="removeAttendanceButton"
-           class="remove-button"
+            id="removeAttendanceButton"
+            class="remove-button"
         >
-            Remove Attendance
+            حذف
         </button>
+
 
         <div id="message"></div>
 
 
+
+        <!-- TODAY ATTENDANCE -->
+
         <div class="today-attendance-by-grade">
 
-    <div class="today-grade-row">
-        <span>Today's Attendance - Grade 3</span>
-        <strong id="todayGrade3Count">0</strong>
-    </div>
+            <div class="today-grade-row">
 
-    <div class="today-grade-row">
-        <span>Today's Attendance - Grade 4</span>
-        <strong id="todayGrade4Count">0</strong>
-    </div>
+                <span>
+                    حضور اليوم - الصف الثالث
+                </span>
 
-    <div class="today-grade-row">
-        <span>Today's Attendance - Grade 5</span>
-        <strong id="todayGrade5Count">0</strong>
-    </div>
+                <strong id="todayGrade3Count">
+                    0
+                </strong>
 
-    <div class="today-grade-row">
-        <span>Today's Attendance - Grade 6</span>
-        <strong id="todayGrade6Count">0</strong>
-    </div>
+            </div>
 
-</div>
+
+            <div class="today-grade-row">
+
+                <span>
+                    حضور اليوم - الصف الرابع
+                </span>
+
+                <strong id="todayGrade4Count">
+                    0
+                </strong>
+
+            </div>
+
+
+            <div class="today-grade-row">
+
+                <span>
+                    حضور اليوم - الصف الخامس
+                </span>
+
+                <strong id="todayGrade5Count">
+                    0
+                </strong>
+
+            </div>
+
+
+            <div class="today-grade-row">
+
+                <span>
+                    حضور اليوم - الصف السادس
+                </span>
+
+                <strong id="todayGrade6Count">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
     </section>
 
 
 
-    <!-- GRADES -->
+    <!-- ATTENDANCE BY GRADE -->
 
     <section class="section">
 
         <h2>
-            Attendance by Grade
+            الحضور حسب المرحلة
         </h2>
 
 
@@ -128,7 +178,7 @@
                 class="grade-button active"
                 data-grade="Grade 3"
             >
-                Grade 3
+                الصف الثالث
             </button>
 
 
@@ -136,7 +186,7 @@
                 class="grade-button"
                 data-grade="Grade 4"
             >
-                Grade 4
+                الصف الرابع
             </button>
 
 
@@ -144,7 +194,7 @@
                 class="grade-button"
                 data-grade="Grade 5"
             >
-                Grade 5
+                الصف الخامس
             </button>
 
 
@@ -152,10 +202,11 @@
                 class="grade-button"
                 data-grade="Grade 6"
             >
-                Grade 6
+                الصف السادس
             </button>
 
         </div>
+
 
 
         <div class="grade-summary">
@@ -163,7 +214,7 @@
             <div class="summary-card">
 
                 <span>
-                    Total Students
+                    Total
                 </span>
 
                 <strong id="totalStudents">
@@ -176,7 +227,7 @@
             <div class="summary-card">
 
                 <span>
-                    Present
+                    present
                 </span>
 
                 <strong id="presentStudents">
@@ -189,7 +240,7 @@
             <div class="summary-card">
 
                 <span>
-                    Absent
+                   Absent
                 </span>
 
                 <strong id="absentStudents">
@@ -203,6 +254,7 @@
     </section>
 
 </div>
+
 
 <script src="app.js"></script>
 
